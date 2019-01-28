@@ -1,0 +1,14 @@
+source 'https://github.com/CocoaPods/Specs.git'  # 官方库
+source 'https://github.com/TuyaInc/TYPublicSpecs.git'
+
+platform :ios, '8.0'
+
+target 'TYNavigationController_Example' do
+  pod 'TYNavigationController', :path => '../'
+
+  target 'TYNavigationController_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

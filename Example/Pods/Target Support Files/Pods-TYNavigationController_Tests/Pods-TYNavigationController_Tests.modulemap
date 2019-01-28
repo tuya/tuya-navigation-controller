@@ -1,0 +1,6 @@
+framework module Pods_TYNavigationController_Tests {
+  umbrella header "Pods-TYNavigationController_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

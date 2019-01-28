@@ -1,0 +1,16 @@
+PODS:
+  - TYNavigationController (0.1.0)
+
+DEPENDENCIES:
+  - TYNavigationController (from `../`)
+
+EXTERNAL SOURCES:
+  TYNavigationController:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  TYNavigationController: b72bbd3bbec6afe19d45f4df99ec1543c7fb200e
+
+PODFILE CHECKSUM: 8b6292396a8f1d538b176ddb9fe6f34509350986
+
+COCOAPODS: 1.5.3

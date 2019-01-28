@@ -1,0 +1,22 @@
+{
+  "name": "TYNavigationController",
+  "version": "0.1.0",
+  "summary": "A short description of TYNavigationController.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/panyfun/TYNavigationController",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "panyfun": "panyfun@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/panyfun/TYNavigationController.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "TYNavigationController/Classes/**/*"
+}
