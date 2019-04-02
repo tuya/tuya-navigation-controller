@@ -13,18 +13,15 @@
 
 @interface TYNavigationBarItemAppearance : NSObject
 
-@property (nonatomic, copy) NSDictionary<NSAttributedStringKey, id> *normalTitleAttribute;
-@property (nonatomic, copy) NSDictionary<NSAttributedStringKey, id> *selectTitleAttribute;
 @property (nonatomic, strong) UIFont *titleFont;
 
-@property (nonatomic, strong) UIColor *normalBackgroundColor;
-@property (nonatomic, strong) UIColor *selectBackgroundColor;
-
-@property (nonatomic, strong) UIImage *normalBackgroundImage;
-@property (nonatomic, strong) UIImage *selectBackgroundImage;
+@property (nonatomic, strong) NSDictionary<NSAttributedStringKey, id> *normalTitleAttribute;
+@property (nonatomic, strong) NSDictionary<NSAttributedStringKey, id> *selectTitleAttribute;
+@property (nonatomic, strong) NSDictionary<NSAttributedStringKey, id> *disableTitleAttribute;
 
 @property (nonatomic, strong) UIColor *normalTintColor;
 @property (nonatomic, strong) UIColor *selectTintColor;
+@property (nonatomic, strong) UIColor *disableTintColor;
 
 @property (nonatomic) CGFloat leftEdge;
 @property (nonatomic) CGFloat rightEdge;
@@ -49,19 +46,41 @@
 @property (nonatomic, strong) TYNavigationBarItemAppearance *naviBarCenterItem;    /**< center样式 */
 @property (nonatomic, strong) TYNavigationBarItemAppearance *naviBarRightItem;     /**< right样式 */
 
+/**
+ left edge to screen for the first left item (left items include back item)
+ if value < 0, will use naviBarLeftItem.leftEdge insted
+ default value is 16
+ if back item exist, this value won't wrok, and naviBarLeftItem.leftEdge will work
+ Available After TuyaSmart 3.9.0+
+ */
+@property (nonatomic) CGFloat leftEdgeForFirstLeftItem;
+/**
+ right edge to screen for the last right item
+ if value < 0, will use naviBarLeftItem.leftEdge insted
+ default value is 16
+ Available After TuyaSmart 3.9.0+
+ */
+@property (nonatomic) CGFloat rightEdgeForLastRightItem;
+
 #pragma mark - NaviStyle
-@property (nonatomic) BOOL naviBarHidden;             /**< 隐藏导航栏 */
-@property (nonatomic) CGFloat naviBarAlpha;           /**< 导航栏整体透明度 */
-@property (nonatomic) CGFloat naviBarBlurAlpha;      /**< 毛玻璃效果 */
-@property (nonatomic) CGFloat naviBarBackgroundAlpha;            /**< 背景透明度 */
-@property (nonatomic) CGFloat naviBarSeperatorAlpha;             /**< 分割线透明度 */
-@property (nonatomic) CGAffineTransform naviBarTransform;        /**< 导航栏transform */
-@property (nonatomic, strong) UIColor *naviBarBackgroundColor;   /**< 背景色 */
-@property (nonatomic, strong) UIImage *naviBarBackgroundImage;   /**< 背景图 */
-@property (nonatomic, strong) UIColor *naviBarSeperatorColor;    /**< 分割线颜色 */
+@property (nonatomic) BOOL naviBarHidden;                           /**< 隐藏导航栏 */
+@property (nonatomic) CGFloat naviBarAlpha;                         /**< 导航栏整体透明度 */
+@property (nonatomic) CGFloat naviBarBlurAlpha;                     /**< 毛玻璃效果 */
+@property (nonatomic) CGFloat naviBarBackgroundAlpha;               /**< 背景透明度 */
+@property (nonatomic) CGFloat naviBarSeperatorAlpha;                /**< 分割线透明度 */
+@property (nonatomic) CGAffineTransform naviBarTransform;           /**< 导航栏transform */
+@property (nonatomic, strong) UIColor *naviBarBackgroundColor;      /**< 背景色 */
+@property (nonatomic, strong) UIImage *naviBarBackgroundImage;      /**< 背景图 */
+@property (nonatomic, strong) CALayer *naviBarBackgroundLayer;      /**< 背景层 Available After TuyaSmart 3.9.0+ */
+@property (nonatomic, strong) UIColor *naviBarSeperatorColor;       /**< 分割线颜色 */
 
 #pragma mark - PopGesture
-@property (nonatomic) TYNavigationPopGestureType naviBarPopGestureType;   /**< 返回手势 */
-@property (nonatomic) BOOL naviBarHitThrough; /**< 点击(背景时)是否可以贯穿navi */
+@property (nonatomic) TYNavigationPopGestureType naviBarPopGestureType;     /**< 返回手势 */
+@property (nonatomic) BOOL naviBarHitThrough;                               /**< 点击(背景时)是否可以贯穿navi */
+
+#pragma mark - StatusBar
+@property (nonatomic) UIStatusBarStyle statusBarStyle;
+@property (nonatomic) BOOL statusBarHidden;
+@property (nonatomic) UIStatusBarAnimation statusBarAnimation;
 
 @end

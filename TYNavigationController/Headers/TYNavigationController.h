@@ -8,7 +8,6 @@
 #import <UIKit/UIKit.h>
 
 #import "TYNavigationControllerProtocol.h"
-#import "TYNavigationBarStatusProtocol.h"
 
 @interface TYNavigationController : UINavigationController <TYNavigationControllerProtocol>
 

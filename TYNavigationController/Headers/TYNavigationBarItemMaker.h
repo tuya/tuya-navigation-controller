@@ -39,13 +39,26 @@
 @property (nonatomic, copy, readonly) TYNavigationBarItemMaker *(^alpha)(CGFloat alpha);
 @property (nonatomic, copy, readonly) TYNavigationBarItemMaker *(^size)(CGSize size);
 
+/**
+ Available After TuyaSmart 3.9.0+
+ */
+@property (nonatomic, copy, readonly) TYNavigationBarItemMaker *(^labelBreakMode)(NSLineBreakMode mode);
+/**
+ Available After TuyaSmart 3.9.0+
+ */
+@property (nonatomic, copy, readonly) TYNavigationBarItemMaker *(^imageContentMode)(UIViewContentMode mode);
+/**
+ Available After TuyaSmart 3.9.0+
+ */
+@property (nonatomic, copy, readonly) TYNavigationBarItemMaker *(^clipToBounds)(BOOL clip);
+
 @property (nonatomic, copy, readonly) TYNavigationBarItemMaker *(^titleInsets)(UIEdgeInsets insets);
 @property (nonatomic, copy, readonly) TYNavigationBarItemMaker *(^imageInsets)(UIEdgeInsets insets);
 @property (nonatomic, copy, readonly) TYNavigationBarItemMaker *(^contentInsets)(UIEdgeInsets insets);
 
 @property (nonatomic, copy, readonly) TYNavigationBarItemMaker *(^leftEdge)(CGFloat edge);
 @property (nonatomic, copy, readonly) TYNavigationBarItemMaker *(^rightEdge)(CGFloat edge);
-@property (nonatomic, copy, readonly) TYNavigationBarItemMaker *(^verticalOffset)(CGFloat offset);
+@property (nonatomic, copy, readonly) TYNavigationBarItemMaker *(^offset)(UIOffset offset);
 
 @property (nonatomic, copy, readonly) TYNavigationBarItemMaker *(^userInteractionEnabled)(BOOL userInteractionEnabled);
 @property (nonatomic, copy, readonly) TYNavigationBarItemMaker *(^hitExtend)(UIEdgeInsets hitExtend);
@@ -55,7 +68,9 @@
 
 @property (nonatomic, copy, readonly) TYNavigationBarItemMaker *(^tag)(NSInteger tag);
 
+@property (nonatomic, copy, readonly) TYNavigationBarItemMaker *(^isAccessibilityElement)(BOOL isAccessibilityElement);
 @property (nonatomic, copy, readonly) TYNavigationBarItemMaker *(^accessibilityIdentifier)(NSString *accessibilityIdentifier);
+@property (nonatomic, copy, readonly) TYNavigationBarItemMaker *(^accessibilityTraits)(UIAccessibilityTraits traits);
 @property (nonatomic, copy, readonly) TYNavigationBarItemMaker *(^accessibilityLabel)(NSString *accessibilityLabel);
 @property (nonatomic, copy, readonly) TYNavigationBarItemMaker *(^accessibilityHint)(NSString *accessibilityHint);
 @property (nonatomic, copy, readonly) TYNavigationBarItemMaker *(^accessibilityValue)(NSString *accessibilityValue);

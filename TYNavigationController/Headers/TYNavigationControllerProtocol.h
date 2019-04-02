@@ -22,11 +22,11 @@
 - (void)ty_refreshHidden;
 - (void)ty_refreshTransform;
 - (void)ty_refreshBlurAlpha;
-- (void)ty_refreshBackgroundColor;
-- (void)ty_refreshBackgroundImage;
-- (void)ty_refreshBackgroundAlpha;
+- (void)ty_refreshBackground;
 - (void)ty_refreshSeperator;
 - (void)ty_refreshPopGesture;
 - (void)ty_refreshHitThrough;
+
+- (void)ty_refreshStatusBar;
 
 @end

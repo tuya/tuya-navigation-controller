@@ -9,11 +9,9 @@
 
 #import "TYNavigationBarItemMaker.h"
 
-@interface TYNavigationBarItem : NSObject <NSCopying>
+@interface TYNavigationBarItem : NSObject <NSCopying, UIAccessibilityIdentification>
 
 @property (nonatomic, strong) UIView *customView;
-
-@property (nonatomic, strong) UIBarButtonItem *uiBarItem;
 
 @property (nonatomic) UIControlState status;    /**< Only Normal、Highlighted、Selected、Disabled are available */
 
@@ -45,27 +43,39 @@
 
 @property (nonatomic) CGFloat alpha;
 
-@property (nonatomic) CGSize size;  /**< w/h 为 0/CGFLOAT_MAX 则自动计算 */
+@property (nonatomic) CGSize size;  /**< w or h = 0 or CGFLOAT_MAX means automatic */
 
-@property (nonatomic) UIEdgeInsets titleInsets;     /**< 参考UIButton.titleEdgeInsets */
-@property (nonatomic) UIEdgeInsets imageInsets;     /**< 参考UIButton.imageEdgeInsets */
-@property (nonatomic) UIEdgeInsets contentInsets;   /**< 参考UIButton.contentEdgeInsets */
+/**
+ Available After TuyaSmart 3.9.0+
+ */
+@property (nonatomic) NSLineBreakMode titleBreakMode;
+/**
+ Available After TuyaSmart 3.9.0+
+ */
+@property (nonatomic) UIViewContentMode imageContentMode;
+/**
+ Available After TuyaSmart 3.9.0+
+ */
+@property (nonatomic) BOOL clipToBounds;
 
-@property (nonatomic) CGFloat leftEdge;
-@property (nonatomic) CGFloat rightEdge;
-@property (nonatomic) CGFloat verticalOffset; // 暂不支持   Not Available
 
-@property (nonatomic) BOOL userInteractionEnabled;     /**< 是否可以点击 Default: YES */
-@property (nonatomic) UIEdgeInsets hitExtend;   /**< 点击区域扩展 正向外 负向内 */
+@property (nonatomic) UIEdgeInsets titleInsets;     /**< reference to UIButton.titleEdgeInsets */
+@property (nonatomic) UIEdgeInsets imageInsets;     /**< reference to UIButton.imageEdgeInsets */
+@property (nonatomic) UIEdgeInsets contentInsets;   /**< reference to UIButton.contentEdgeInsets */
 
-@property (nonatomic, weak) id target;
-@property (nonatomic) SEL action;
+@property (nonatomic) CGFloat leftEdge;         /**< distance to left item or screen */
+@property (nonatomic) CGFloat rightEdge;        /**< distance to right item or screen */
+@property (nonatomic) UIOffset offset;
+
+@property (nonatomic) BOOL userInteractionEnabled;      /**< Default: YES */
+@property (nonatomic) UIEdgeInsets hitExtend;           /**< point inside area extend */
+
+@property (nonatomic, weak) id target;      /**< tap action target, callback [navi.topVC ty_navixxxItemAction] if nil */
+@property (nonatomic) SEL action;           /**< tap action sel, callback [navi.topVC ty_navixxxItemAction] if nil */
 
 @property (nonatomic, readonly) BOOL isEraserItem;
 
 @property (nonatomic) NSInteger tag;
-
-@property (nonatomic, copy) NSString *accessibilityIdentifier;
 
 
 + (instancetype)itemWithTitle:(NSString *)title;
@@ -75,9 +85,36 @@
 + (instancetype)itemWithMaker:(void(^)(TYNavigationBarItemMaker *maker))block;
 
 /**
- 空白项，可以用来移除tab上已有item
- empty item, use to remove an item on navi
+ zh*
+ 空白项，可以用来完全移除tab上已有的item
+ zh$
+ 
+ en*
+ empty item, use to remove an item on navi completely
+ en&
  */
 + (instancetype)eraserItem;
+
+@end
+
+
+
+@interface TYNavigationBarItem ()
+
+/**
+ | -12pt- <
+ */
++ (instancetype)backItem;
+
+/**
+ | -16pt- Cancel
+ */
++ (instancetype)cancelItem;
+
+/**
+ navigation title item
+ userInteractionEnabled = NO
+ */
++ (instancetype)centerItem:(NSString *)title;
 
 @end
