@@ -30,3 +30,8 @@
 - (BOOL)ty_naviPopGestureShouldBegin;
 
 @end
+
+
+
+@interface UIViewController () <TYNavigationCallbackProtocol>
+@end

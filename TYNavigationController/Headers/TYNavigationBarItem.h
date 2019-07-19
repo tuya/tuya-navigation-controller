@@ -38,7 +38,7 @@
 @property (nonatomic, strong) UIImage *disableBackgroundImage;
 
 @property (nonatomic, strong) UIColor *normalTintColor;
-@property (nonatomic, strong) UIColor *selectTintColor;
+@property (nonatomic, strong) UIColor *selectTintColor; /**< default is normalTintColor with alpha 0.6 */
 @property (nonatomic, strong) UIColor *disableTintColor;
 
 @property (nonatomic) CGFloat alpha;
@@ -68,10 +68,10 @@
 @property (nonatomic) UIOffset offset;
 
 @property (nonatomic) BOOL userInteractionEnabled;      /**< Default: YES */
-@property (nonatomic) UIEdgeInsets hitExtend;           /**< point inside area extend */
+@property (nonatomic) UIEdgeInsets hitExtend;
 
-@property (nonatomic, weak) id target;      /**< tap action target, callback [navi.topVC ty_navixxxItemAction] if nil */
-@property (nonatomic) SEL action;           /**< tap action sel, callback [navi.topVC ty_navixxxItemAction] if nil */
+@property (nonatomic, weak) id target;      /**< tap action target, call [navi.topVC ty_navixxxItemAction] if target is nil */
+@property (nonatomic) SEL action;           /**< tap action sel, call [navi.topVC ty_navixxxItemAction] if sel is nil */
 
 @property (nonatomic, readonly) BOOL isEraserItem;
 
@@ -86,12 +86,12 @@
 
 /**
  zh*
- 空白项，可以用来完全移除tab上已有的item
+ 空白项，可以用来完全移除navi上已有的item
  zh$
  
  en*
  empty item, use to remove an item on navi completely
- en&
+ en$
  */
 + (instancetype)eraserItem;
 

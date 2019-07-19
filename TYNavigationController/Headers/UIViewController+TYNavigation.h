@@ -9,6 +9,8 @@
 
 #import "TYNavigationControllerProtocol.h"
 
+#import "UIViewController+TYStatusBar.h"
+
 #import "TYNavigationTopBarProtocol.h"
 #import "TYNavigationCallbackProtocol.h"
 #import "TYNavigationPresentProtocol.h"
@@ -36,13 +38,12 @@
  !!! Don't override any accessor method
  en$
  */
-@interface UIViewController (TYNavigation) <TYNavigationTopBarProtocol, TYNavigationPresentProtocol, TYNavigationCallbackProtocol>
+@interface UIViewController (TYNavigation)
 
 @property (nonatomic, strong, readonly) __kindof UINavigationController<TYNavigationControllerProtocol> *navigationController;
 
 @end
 
-@interface UIViewController (TYNaviBarProtocol) <TYNavigationNaviBarProtocol>
-@end
+
 
 

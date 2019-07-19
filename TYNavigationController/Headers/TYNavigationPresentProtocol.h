@@ -56,14 +56,15 @@
 #pragma mark - NaviStyle
 @property (nonatomic, readonly) BOOL ty_naviPresentHidden;
 @property (nonatomic, readonly) CGFloat ty_naviPresentAlpha;
+@property (nonatomic, readonly) BOOL ty_naviPresentUseAlphaInsteadHidden;
 @property (nonatomic, readonly) CGFloat ty_naviPresentBlurAlpha;
 @property (nonatomic, readonly) CGFloat ty_naviPresentBackgroundAlpha;
-@property (nonatomic, readonly) CGFloat ty_naviPresentSeperatorAlpha;
+@property (nonatomic, readonly) CGFloat ty_naviPresentSeparatorAlpha;
 @property (nonatomic, readonly) CGAffineTransform ty_naviPresentTransform;
 @property (nonatomic, readonly) UIColor *ty_naviPresentBackgroundColor;
 @property (nonatomic, readonly) UIImage *ty_naviPresentBackgroundImage;
 @property (nonatomic, readonly) CALayer *ty_naviPresentBackgroundLayer; /**< Available After TuyaSmart 3.9.0+ */
-@property (nonatomic, readonly) UIColor *ty_naviPresentSeperatorColor;
+@property (nonatomic, readonly) UIColor *ty_naviPresentSeparatorColor;
 
 #pragma mark - Gesture
 @property (nonatomic, readonly) TYNavigationPopGestureType ty_naviPresentPopGestureType;
@@ -74,4 +75,9 @@
 @property (nonatomic, readonly) BOOL ty_naviPresentStatusBarHidden;
 @property (nonatomic, readonly) UIStatusBarAnimation ty_naviPresentStatusBarAnimation;
 
+@end
+
+
+
+@interface UIViewController ()  <TYNavigationPresentProtocol>
 @end

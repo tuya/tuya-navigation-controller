@@ -7,10 +7,6 @@
 
 #import <Foundation/Foundation.h>
 
-#import "TYNavigationTypeDefine.h"
-
-@class TYNavigationBarItem;
-
 @protocol TYNavigationControllerProtocol <NSObject>
 
 #pragma mark - Refresh
@@ -23,10 +19,8 @@
 - (void)ty_refreshTransform;
 - (void)ty_refreshBlurAlpha;
 - (void)ty_refreshBackground;
-- (void)ty_refreshSeperator;
+- (void)ty_refreshSeparator;
 - (void)ty_refreshPopGesture;
 - (void)ty_refreshHitThrough;
-
-- (void)ty_refreshStatusBar;
 
 @end

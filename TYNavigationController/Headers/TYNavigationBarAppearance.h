@@ -38,7 +38,8 @@
  */
 @interface TYNavigationBarAppearance : NSObject
 
-+ (instancetype)appearance;
++ (instancetype)appearance __deprecated_msg("Use +shareAppearance instead");
++ (instancetype)shareAppearance;
 
 #pragma mark - Items
 @property (nonatomic, strong) TYNavigationBarItemAppearance *naviBarBackItem;      /**< back样式 */
@@ -65,14 +66,15 @@
 #pragma mark - NaviStyle
 @property (nonatomic) BOOL naviBarHidden;                           /**< 隐藏导航栏 */
 @property (nonatomic) CGFloat naviBarAlpha;                         /**< 导航栏整体透明度 */
+@property (nonatomic) BOOL naviBarUseAlphaInsteadHidden;            /**< 使用alpha=0代替导航栏隐藏 */
 @property (nonatomic) CGFloat naviBarBlurAlpha;                     /**< 毛玻璃效果 */
 @property (nonatomic) CGFloat naviBarBackgroundAlpha;               /**< 背景透明度 */
-@property (nonatomic) CGFloat naviBarSeperatorAlpha;                /**< 分割线透明度 */
+@property (nonatomic) CGFloat naviBarSeparatorAlpha;                /**< 分割线透明度 */
 @property (nonatomic) CGAffineTransform naviBarTransform;           /**< 导航栏transform */
 @property (nonatomic, strong) UIColor *naviBarBackgroundColor;      /**< 背景色 */
 @property (nonatomic, strong) UIImage *naviBarBackgroundImage;      /**< 背景图 */
 @property (nonatomic, strong) CALayer *naviBarBackgroundLayer;      /**< 背景层 Available After TuyaSmart 3.9.0+ */
-@property (nonatomic, strong) UIColor *naviBarSeperatorColor;       /**< 分割线颜色 */
+@property (nonatomic, strong) UIColor *naviBarSeparatorColor;       /**< 分割线颜色 */
 
 #pragma mark - PopGesture
 @property (nonatomic) TYNavigationPopGestureType naviBarPopGestureType;     /**< 返回手势 */

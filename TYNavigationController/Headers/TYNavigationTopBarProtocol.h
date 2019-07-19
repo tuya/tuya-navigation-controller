@@ -49,14 +49,16 @@
 #pragma mark - NaviStyle
 @property (nonatomic) BOOL ty_topBarHidden;             /**< 隐藏导航栏  影响: 当前页面 */
 @property (nonatomic) CGFloat ty_topBarAlpha;           /**< 导航栏整体透明度  影响：当前页面 */
+@property (nonatomic) BOOL ty_topBarUseAlphaInsteadHidden;  /**< 设置导航栏整体隐藏时，使用alpha=0代替 [default: yes]  影响：当前页面 */
+
 @property (nonatomic) CGFloat ty_topBarBlurAlpha;       /**< 毛玻璃效果, Default:0  影响：当前页面 */
 @property (nonatomic) CGFloat ty_topBarBackgroundAlpha;             /**< 背景透明度  影响：当前页面 */
-@property (nonatomic) CGFloat ty_topBarSeperatorAlpha;              /**< 分割线透明度  影响：当前页面 */
+@property (nonatomic) CGFloat ty_topBarSeparatorAlpha;              /**< 分割线透明度  影响：当前页面 */
 @property (nonatomic) CGAffineTransform ty_topBarTransform;         /**< 导航栏transform  影响: 当前页面 */
 @property (nonatomic, strong) UIColor *ty_topBarBackgroundColor;    /**< 背景色  影响：当前页面 */
 @property (nonatomic, strong) UIImage *ty_topBarBackgroundImage;    /**< 背景图  影响：当前页面 */
 @property (nonatomic, strong) CALayer *ty_topBarBackgroundLayer;    /**< 背景层  影响：当前页面 Available After TuyaSmart 3.9.0+ */
-@property (nonatomic, strong) UIColor *ty_topBarSeperatorColor;     /**< 分割线颜色  影响：当前页面 */
+@property (nonatomic, strong) UIColor *ty_topBarSeparatorColor;     /**< 分割线颜色  影响：当前页面 */
 
 #pragma mark - PopGesture
 @property (nonatomic) TYNavigationPopGestureType ty_topBarPopGestureType;   /**< 返回手势 影响: 当前页面 */
@@ -69,4 +71,14 @@
 @property (nonatomic) BOOL ty_topBarStatusBarHidden;   /**< 隐藏状态栏 default:NO 影响: 当前页面 */
 @property (nonatomic) UIStatusBarAnimation ty_topBarStatusBarAnimation;
 
+
+
+#pragma mark - Deprecated
+@property (nonatomic) CGFloat ty_topBarSeperatorAlpha __deprecated_msg("Use ty_topBarSeparatorAlpha instead");
+
+@end
+
+
+
+@interface UIViewController ()  <TYNavigationTopBarProtocol>
 @end
