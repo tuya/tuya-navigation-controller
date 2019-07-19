@@ -2,12 +2,12 @@
 //  TYViewController.h
 //  TYNavigationController
 //
-//  Created by panyfun on 01/28/2019.
-//  Copyright (c) 2019 panyfun. All rights reserved.
+//  Created by TuyaInc on 01/02/2019.
+//  Copyright (c) 2019 TuyaInc. All rights reserved.
 //
 
 @import UIKit;
 
-@interface TYViewController : UIViewController
+@interface TYViewController : UITableViewController
 
 @end

@@ -1,6 +1,0 @@
-framework module Pods_TYNavigationController_Example {
-  umbrella header "Pods-TYNavigationController_Example-umbrella.h"
-
-  export *
-  module * { export * }
-}

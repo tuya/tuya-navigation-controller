@@ -1,16 +1,23 @@
 PODS:
-  - TYNavigationController (0.1.0)
+  - TYNavigationController (1.0.0):
+    - TYUIKit
+  - TYUIKit (1.0.0)
 
 DEPENDENCIES:
   - TYNavigationController (from `../`)
+
+SPEC REPOS:
+  https://github.com/TuyaInc/TYPublicSpecs.git:
+    - TYUIKit
 
 EXTERNAL SOURCES:
   TYNavigationController:
     :path: "../"
 
 SPEC CHECKSUMS:
-  TYNavigationController: b72bbd3bbec6afe19d45f4df99ec1543c7fb200e
+  TYNavigationController: 1bda5a6e9044abd42142ddab5681127e764a13cc
+  TYUIKit: 236db5b5192fdb5a31582c112866ec3514fe0a0b
 
-PODFILE CHECKSUM: 8b6292396a8f1d538b176ddb9fe6f34509350986
+PODFILE CHECKSUM: d29d5a7feb1b085a4e7f77870dd4345f70543690
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.2

@@ -1,7 +1,7 @@
-source 'https://github.com/CocoaPods/Specs.git'  # 官方库
+source 'https://github.com/CocoaPods/Specs.git'
 source 'https://github.com/TuyaInc/TYPublicSpecs.git'
 
-platform :ios, '8.0'
+platform :ios, '9.0'
 
 target 'TYNavigationController_Example' do
   pod 'TYNavigationController', :path => '../'
