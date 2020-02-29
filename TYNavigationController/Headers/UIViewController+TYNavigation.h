@@ -40,10 +40,18 @@
  */
 @interface UIViewController (TYNavigation)
 
+/**
+ override get method in sub view controller if need
+ or set value to the property in init method
+ */
+@property (nonatomic) BOOL ty_enableTYNaviRender;
+
 @property (nonatomic, strong, readonly) __kindof UINavigationController<TYNavigationControllerProtocol> *navigationController;
 
+/**
+ Only navigationController.topViewController will be call
+ */
+- (void)ty_naviWillPushViewController:(UIViewController *)viewController;
+
 @end
-
-
-
 

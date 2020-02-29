@@ -11,10 +11,36 @@
 
 @interface TYNavigationBarItem : NSObject <NSCopying, UIAccessibilityIdentification>
 
+/**
+ [^zh]
+ 一旦设置了customView，其它样式、状态属性均不再可用
+ [$zh]
+ [^en]
+ if customView is set, other properties will not work
+ [$en]
+ */
 @property (nonatomic, strong) UIView *customView;
 
-@property (nonatomic) UIControlState status;    /**< Only Normal、Highlighted、Selected、Disabled are available */
+/**
+ [^zh]
+ 只有 Normal、Highlighted、Disabled 可用
+ [$zh]
+ [^en]
+ Only Normal、Highlighted、Selected、Disabled are available
+ [$en]
+ */
+@property (nonatomic) UIControlState status;
 
+/**
+ [^zh]
+ 文本的字体，默认nil
+ nil则使用 TYNavigationBarItemAppearance.titleFont
+ [$zh]
+ [^en]
+ title font, default is nil
+ if nil, then use TYNavigationBarItemAppearance.titleFont instead
+ [$en]
+ */
 @property (nonatomic, strong) UIFont *titleFont;
 
 @property (nonatomic, copy) NSString *normalTitle;
@@ -42,36 +68,33 @@
 @property (nonatomic, strong) UIColor *disableTintColor;
 
 @property (nonatomic) CGFloat alpha;
-
 @property (nonatomic) CGSize size;  /**< w or h = 0 or CGFLOAT_MAX means automatic */
 
-/**
- Available After TuyaSmart 3.9.0+
- */
 @property (nonatomic) NSLineBreakMode titleBreakMode;
-/**
- Available After TuyaSmart 3.9.0+
- */
-@property (nonatomic) UIViewContentMode imageContentMode;
-/**
- Available After TuyaSmart 3.9.0+
- */
-@property (nonatomic) BOOL clipToBounds;
 
+@property (nonatomic) UIViewContentMode imageContentMode;
+@property (nonatomic) BOOL clipToBounds;
 
 @property (nonatomic) UIEdgeInsets titleInsets;     /**< reference to UIButton.titleEdgeInsets */
 @property (nonatomic) UIEdgeInsets imageInsets;     /**< reference to UIButton.imageEdgeInsets */
 @property (nonatomic) UIEdgeInsets contentInsets;   /**< reference to UIButton.contentEdgeInsets */
 
-@property (nonatomic) CGFloat leftEdge;         /**< distance to left item or screen */
-@property (nonatomic) CGFloat rightEdge;        /**< distance to right item or screen */
+@property (nonatomic) CGFloat leftEdge;         /**< distance to screen or the item on the left  */
+@property (nonatomic) CGFloat rightEdge;        /**< distance to screen or the item on the right */
 @property (nonatomic) UIOffset offset;
 
 @property (nonatomic) BOOL userInteractionEnabled;      /**< Default: YES */
 @property (nonatomic) UIEdgeInsets hitExtend;
 
-@property (nonatomic, weak) id target;      /**< tap action target, call [navi.topVC ty_navixxxItemAction] if target is nil */
-@property (nonatomic) SEL action;           /**< tap action sel, call [navi.topVC ty_navixxxItemAction] if sel is nil */
+/**< tap action target, call back [navi.topVC ty_navixxxItemAction] if target is nil */
+@property (nonatomic, weak) id target;
+/**< tap action sel, call back [navi.topVC ty_navixxxItemAction] if action is nil */
+@property (nonatomic) SEL action;
+
+
+@property (nonatomic, strong) UIView *decorateView;
+/**< center location of decorate view,  x y ∈ [0, 1]  default:(1, 0) */
+@property (nonatomic) CGPoint decorateLocation;
 
 @property (nonatomic, readonly) BOOL isEraserItem;
 
@@ -94,6 +117,17 @@
  en$
  */
 + (instancetype)eraserItem;
+
+/**
+ zh*
+ item正在使用的view，刷新后可能变化，不要强引用
+ zh$
+ 
+ en*
+ the view which show on the navigation bar, Don't retain it
+ en$
+ */
+- (UIView *)currentNaviBarItemView;
 
 @end
 
