@@ -2,7 +2,7 @@
 //  UIViewController+TYStatusBar.h
 //  TYNavigationController
 //
-//  Created by Pany on 2019/5/24.
+//  Created by TuyaInc on 2019/5/24.
 //
 
 #import <UIKit/UIKit.h>
