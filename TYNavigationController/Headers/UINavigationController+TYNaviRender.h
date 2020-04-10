@@ -25,6 +25,8 @@ FOUNDATION_EXPORT CGFloat TYNaviItemDefaultEdgeInset(void);
  */
 @property (nonatomic, strong) TYNavigationBarAppearance *ty_naviApperance;
 
+@property (nonatomic, weak, readonly) UIViewController * _Nullable ty_orientationDecisiveVC;
+
 @end
 
 NS_ASSUME_NONNULL_END
