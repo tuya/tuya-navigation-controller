@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name             = 'TYNavigationController'
 
-  s.version          = '1.2.0'
+  s.version          = '1.2.1'
 
   s.summary          = 'Navigation Controller Powered By TuyaInc'
   s.homepage         = 'https://github.com/TuyaInc/TYNavigationController.git'
